@@ -46,6 +46,7 @@ type Client struct {
 	Users              *UserService
 	Vendors            *VendorService
 	EventRules         *EventRuleService
+	Rulesets           *RulesetService
 }
 
 // Response is a wrapper around http.Response
@@ -88,6 +89,7 @@ func NewClient(config *Config) (*Client, error) {
 	c.Extensions = &ExtensionService{c}
 	c.ExtensionSchemas = &ExtensionSchemaService{c}
 	c.EventRules = &EventRuleService{c}
+	c.Rulesets = &RulesetService{c}
 
 	return c, nil
 }
